@@ -14,6 +14,8 @@ jobs: # jobs consist of a sequence of steps that are executed one after the othe
       - run: | # pipe operator
           echo "Hello from ${{github.actor}}"
           echo "Current branch is '${{github.ref}}'."
+          echo "Hello ${{vars.WHO_TO_GREET}}"
+          echo "Secret var is ${{secrets.MY_SECRET}}"
       - name: Checkout
         uses: actions/checkout@v4.2.2
       - run: tree # displays the files inside the repo
