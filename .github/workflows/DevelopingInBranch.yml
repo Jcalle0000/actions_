@@ -5,8 +5,8 @@ jobs:
     job1:
         runs-on: ubuntu-latest
         permissions:
-            contents:read
-            pull-requests:write
+            contents: read
+            pull-requests: write
         steps:
             - run: |
                 echo "Workflow triggered in branch '${{ github.ref}}'."
