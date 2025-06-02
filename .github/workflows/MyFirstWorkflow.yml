@@ -1,0 +1,19 @@
+
+name: My First Workflow 
+on:
+  push:
+      branches: # want to test workflow to run on every push to the main branch
+          - main
+  workflow_dispatch:
+
+jobs: # jobs consist of a sequence of steps that are executed one after the other
+  first_job: # name of the job
+    name: My First Job
+    runs-on: ubuntu-latest # always want linux 
+    steps:
+      - run: | # pipe operator
+          echo "Hello from ${{github.actor}}"
+          echo "Current branch is '${{github.ref}}'."
+      - name: Checkout
+        uses: actions/checkout@v4.2.2
+      - run: tree # displays the files inside the repo
